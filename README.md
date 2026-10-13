@@ -31,18 +31,19 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='bitfit_walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+GIF created with **ffmpeg** (cropped the screen recording to the emulator and converted to GIF).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Challenges encountered while building the app:
+- Creating a dialog to add food was easy with all the AlertDialog documentation
+- Google's docs were interesting, to say the least...
+
+Biggest Issue: Dependencies
+- The project was created with the latest AGP / Gradle versions, which use AGP's new **built-in Kotlin** support (no separate `kotlin-android` plugin).
+- Since our compileSdk was so new, there were some agonizing dependency issues when trying to add Room to the project. To resolve this, we used the newest available Room dependency alongside the matching KSP version, and added the KSP plugin to our `app/build.gradle.kts` so Room's annotations could be processed at compile time.
 
 ## License
 
